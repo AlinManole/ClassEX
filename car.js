@@ -7,13 +7,15 @@ class Car {
     }
 
 
-    accelerate() {
-        this.speed = 50 + 'Km/h'
+    accelerate(num) {
+        this.speed = this.speed + num
     }
+    // accelerate(num) 
 
-    break() {
-        this.speed = 25 + 'Km/h'
+    break(num) {
+        this.speed = this.speed + num
     }
+    // break(num)
 
     describe() {
         console.log(`${this.brand} running at ${this.speed} Km/h`)
@@ -21,43 +23,44 @@ class Car {
 }
 
 var ford = new Car('Ford', 0)
-console.log(ford)
 
-ford.accelerate()
-console.log(ford)
+ford.accelerate(50)
+ford.break(25)
 
-ford.break()
 console.log(ford)
-
-ford.describe()
 
 
 // TV
 
 class TV {
 
-    constructor( brand , channel , volume) {
-        brand = brand
-        channel = channel
-        volume = volume
+    constructor(brand , channel , volume) {
+        this.brand = brand
+        this.channel = channel
+        this.volume = volume
     }
 
-    volumeUp() {
-        this.volume += volume
+    volumeUp(vol) {
+        this.volume = this.volume + vol
+    }
+    volumeUp(vol)
+
+    volumeDown(vol) {
+        this.volume = this.volume - vol
+    }
+    volumeDown(vol)
+
+    channelUp(chan) {
+        this.channel = this.channel  + chan
     }
 
-    volumeDown() {
-        this.volume -= volume
-    }
-
-    channelUp() {
-
-    }
-
-    channelDown() {
-
+    channelDown(chan) {
+        this.channel = this.channel  - chan
     }
 
 }
 
+    var myTv = new TV('Samsung', 1 , 0)
+    
 
+    
