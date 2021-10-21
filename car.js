@@ -10,12 +10,10 @@ class Car {
     accelerate(num) {
         this.speed = this.speed + num
     }
-    // accelerate(num) 
-
     break(num) {
-        this.speed = this.speed + num
+        this.speed = this.speed - num
     }
-    // break(num)
+
 
     describe() {
         console.log(`${this.brand} running at ${this.speed} Km/h`)
@@ -25,6 +23,7 @@ class Car {
 var ford = new Car('Ford', 0)
 
 ford.accelerate(50)
+console.log(ford)
 ford.break(25)
 
 console.log(ford)
@@ -40,27 +39,51 @@ class TV {
         this.volume = volume
     }
 
-    volumeUp(vol) {
-        this.volume = this.volume + vol
-    }
-    volumeUp(vol)
+    volumeUp(num) {
+        if (num + this.volume < 100) {
+            this.volume = this.volume + num
+        }
 
-    volumeDown(vol) {
-        this.volume = this.volume - vol
     }
-    volumeDown(vol)
+    
+
+    volumeDown(num) {
+        if (num - this.volume > 0) {
+            this.volume = this.volume - num
+        }
+    }
+    
 
     channelUp(chan) {
         this.channel = this.channel  + chan
     }
+    
 
     channelDown(chan) {
         this.channel = this.channel  - chan
     }
 
+
+    changeChan (chan) {
+        console.log(chan)
+        if (chan > 0 && chan < 50) {
+            this.channel = chan
+        }        
+    }
+
+    reset () {
+        this.channel = 1
+        this.volume = 50
+    }
+    
 }
 
-    var myTv = new TV('Samsung', 1 , 0)
+    var myTv = new TV('Samsung', 0 , 0)
     
+    myTv.channelUp(1)
+    myTv.volumeUp(20)
+    console.log(myTv)
+  
+
 
     
