@@ -23,10 +23,11 @@ class Car {
 var ford = new Car('Ford', 0)
 
 ford.accelerate(50)
-console.log(ford)
-ford.break(25)
 
+ford.break(25)
 console.log(ford)
+
+
 
 
 // TV
